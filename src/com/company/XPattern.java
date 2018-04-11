@@ -18,7 +18,7 @@ public class XPattern {
                 } else if (i + j == l - 1 && i != j) {
                     System.out.print(c[i]);
                 } else {
-                    System.out.print(" ");
+                    System.out.print("  ");
                 }
             }
             System.out.println();
