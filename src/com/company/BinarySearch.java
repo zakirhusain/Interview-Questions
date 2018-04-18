@@ -8,7 +8,7 @@ public class BinarySearch {
     private int[] data;
     private Random generator;
 
-    public BinarySearch(int size) {
+    private BinarySearch(int size) {
         generator = new Random();
         data = new int[size];
 
@@ -19,7 +19,7 @@ public class BinarySearch {
         Arrays.sort(data);
     }
 
-    public int binarySearch(int searchKey) {
+    private int binarySearch(int searchKey) {
         // low end of a search area
         int low = 0;
         int high = data.length - 1;
@@ -29,11 +29,11 @@ public class BinarySearch {
         do {
             if (searchKey == data[middle])
                 location = middle;
-            else if (searchKey < data[middle])
+            else if (searchKey < data[middle]) {
                 high = middle - 1;
-            else
+            } else {
                 low = middle + 1;
-
+            }
             // relocate the middle
             middle = (low + high + 1) / 2;
         } while ((low <= high) && (location == -1));
